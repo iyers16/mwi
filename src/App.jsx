@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename="/mwi/">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />
