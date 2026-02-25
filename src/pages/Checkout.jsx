@@ -55,29 +55,29 @@ const Checkout = () => {
         <div className="page-offset">
             <section className="section">
                 <div className="container">
-                    <h1 className="font-heading" style={{ fontSize: '3.5rem', marginBottom: '60px' }}>CHECKOUT</h1>
+                    <h1 className="font-heading" style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '40px' }}>CHECKOUT</h1>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '60px' }}>
+                    <div className="checkout-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '40px' }}>
                         {/* Cart Items List */}
                         <div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', background: 'rgba(255,255,255,0.05)' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                                 {cart.map(item => (
-                                    <div key={item.id} style={{ background: 'var(--dark)', padding: '24px', display: 'flex', alignItems: 'center', gap: '30px', borderBottom: '1px solid #111' }}>
-                                        <div style={{ flex: 1 }}>
-                                            <h4 style={{ color: '#888', fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '4px' }}>{item.brand}</h4>
+                                    <div key={item.id} style={{ background: 'var(--dark)', padding: '20px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '20px', border: '1px solid #111', borderRadius: '8px' }}>
+                                        <div style={{ flex: '1 1 200px' }}>
+                                            <h4 style={{ color: '#888', fontSize: '0.6rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '4px' }}>{item.brand}</h4>
                                             <h3 className="font-heading" style={{ fontSize: '1.2rem' }}>{item.name}</h3>
                                             <p style={{ color: '#555', fontSize: '0.85rem' }}>{item.size}</p>
                                         </div>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', background: '#050505', padding: '5px 15px', borderRadius: '4px' }}>
-                                            <button onClick={() => updateQuantity(item.id, -1)} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>-</button>
-                                            <span style={{ fontWeight: 700 }}>{item.quantity}</span>
-                                            <button onClick={() => updateQuantity(item.id, 1)} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>+</button>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px', background: '#050505', padding: '10px 20px', borderRadius: '4px' }}>
+                                            <button onClick={() => updateQuantity(item.id, -1)} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', fontSize: '1.2rem' }}>-</button>
+                                            <span style={{ fontWeight: 700, minWidth: '20px', textAlign: 'center' }}>{item.quantity}</span>
+                                            <button onClick={() => updateQuantity(item.id, 1)} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', fontSize: '1.2rem' }}>+</button>
                                         </div>
-                                        <div style={{ width: '100px', textAlign: 'right' }}>
-                                            <p style={{ fontWeight: 900, fontSize: '1.2rem' }}>${(item.price * item.quantity).toFixed(2)}</p>
+                                        <div style={{ minWidth: '100px', textAlign: 'right', marginLeft: 'auto' }}>
+                                            <p style={{ fontWeight: 900, fontSize: '1.4rem' }}>${(item.price * item.quantity).toFixed(2)}</p>
                                         </div>
                                         <button onClick={() => removeFromCart(item.id)} style={{ background: 'none', border: 'none', color: '#333', cursor: 'pointer' }} className="hover:text-primary">
-                                            <Trash2 size={20} />
+                                            <Trash2 size={24} />
                                         </button>
                                     </div>
                                 ))}
@@ -85,10 +85,10 @@ const Checkout = () => {
                         </div>
 
                         {/* Summary & Form */}
-                        <div style={{ position: 'sticky', top: 'var(--header-height)' }}>
-                            <div style={{ background: '#111', padding: '40px', borderRadius: '8px' }}>
-                                <h3 className="font-heading" style={{ marginBottom: '30px' }}>ORDER SUMMARY</h3>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '30px' }}>
+                        <div className="summary-sticky">
+                            <div style={{ background: '#111', padding: 'clamp(20px, 5vw, 40px)', borderRadius: '8px' }}>
+                                <h3 className="font-heading" style={{ marginBottom: '25px' }}>ORDER SUMMARY</h3>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '25px' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                         <span style={{ color: '#888' }}>Subtotal</span>
                                         <span>${cartTotal.toFixed(2)}</span>
@@ -105,12 +105,12 @@ const Checkout = () => {
 
                                 <form onSubmit={handleOrder} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                                        <label style={{ fontSize: '0.7rem', fontWeight: 800, color: '#666', textTransform: 'uppercase' }}>Phone for Pickup Alert</label>
-                                        <input required type="tel" placeholder="(514) 000-0000" style={{ padding: '15px', background: '#050505', border: '1px solid #222', color: 'white', outline: 'none' }} />
+                                        <label style={{ fontSize: '0.65rem', fontWeight: 800, color: '#666', textTransform: 'uppercase' }}>Phone for Pickup Alert</label>
+                                        <input required type="tel" placeholder="(514) 000-0000" style={{ padding: '15px', background: '#050505', border: '1px solid #222', color: 'white', outline: 'none', borderRadius: '4px' }} />
                                     </div>
-                                    <button className="btn" style={{ width: '100%', marginTop: '10px' }}>Place Pickup Order <ArrowRight size={20} /></button>
+                                    <button className="btn" style={{ width: '100%', marginTop: '5px' }}>Place Pickup Order <ArrowRight size={20} /></button>
                                 </form>
-                                <p style={{ fontSize: '0.75rem', color: '#444', marginTop: '20px', textAlign: 'center' }}>
+                                <p style={{ fontSize: '0.7rem', color: '#444', marginTop: '20px', textAlign: 'center' }}>
                                     By placing this order you agree to pay upon pickup at the store.
                                 </p>
                             </div>
@@ -121,8 +121,12 @@ const Checkout = () => {
 
             <style>{`
         @media (max-width: 1024px) {
-          div[style*="grid-template-columns: 1fr 400px"] {
+          .checkout-grid {
             grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .summary-sticky {
+            position: static !important;
           }
         }
       `}</style>

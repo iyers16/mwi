@@ -14,7 +14,7 @@ const Visit = () => {
         <div className="page-offset">
             <section className="section">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '80px', alignItems: 'start' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '60px', alignItems: 'start' }}>
                         {/* Left: Store Info */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}

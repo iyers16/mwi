@@ -19,15 +19,15 @@ const Flyer = () => {
         <div className="page-offset">
             <section className="section" style={{ paddingBottom: '40px' }}>
                 <div className="container">
-                    <div style={{ borderLeft: '6px solid var(--primary)', paddingLeft: '30px', marginBottom: '60px' }}>
-                        <span className="font-heading" style={{ color: '#666', letterSpacing: '0.2em' }}>FEBRUARY SAVINGS</span>
-                        <h1 className="font-heading" style={{ fontSize: '4rem', marginTop: '10px' }}>WEEKLY SPECIALS</h1>
-                        <p style={{ color: '#888', maxWidth: '600px', fontSize: '1.2rem', marginTop: '20px' }}>
+                    <div style={{ borderLeft: '6px solid var(--primary)', paddingLeft: '20px', marginBottom: '40px' }}>
+                        <span className="font-heading" style={{ color: '#666', letterSpacing: '0.2em', fontSize: '0.8rem' }}>FEBRUARY SAVINGS</span>
+                        <h1 className="font-heading" style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginTop: '10px' }}>WEEKLY SPECIALS</h1>
+                        <p style={{ color: '#888', maxWidth: '600px', fontSize: '1.1rem', marginTop: '15px' }}>
                             Hand-picked deals across our entire store. Click on a flyer to view in full screen.
                         </p>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: '20px' }}>
                         {flyers.map((flyer, i) => (
                             <motion.div
                                 key={i}

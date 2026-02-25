@@ -32,11 +32,11 @@ const Home = () => {
                         style={{ maxWidth: '850px' }}
                     >
                         <span className="font-heading" style={{ color: 'var(--primary)', letterSpacing: '0.4em' }}>PIERREFONDS TRADITION</span>
-                        <h1 style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', lineHeight: 0.85, margin: '20px 0 40px', fontWeight: 900 }}>
+                        <h1 style={{ fontSize: 'clamp(2.5rem, 10vw, 6.5rem)', lineHeight: 0.85, margin: '20px 0 40px', fontWeight: 900 }}>
                             YOUR NEIGHBORHOOD <br />
                             <span className="text-primary">FRESH MARKET</span>
                         </h1>
-                        <p style={{ fontSize: '1.25rem', color: '#ccc', marginBottom: '50px', maxWidth: '550px', lineHeight: 1.6 }}>
+                        <p style={{ fontSize: 'clamp(1rem, 4vw, 1.25rem)', color: '#ccc', marginBottom: '50px', maxWidth: '550px', lineHeight: 1.6 }}>
                             Since 2016, we've been bringing the finest local produce and international groceries to the West Island community.
                         </p>
                         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>

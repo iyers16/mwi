@@ -86,21 +86,21 @@ const Shop = () => {
             <section className="section" style={{ paddingBottom: '40px' }}>
                 <div className="container">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '60px', flexWrap: 'wrap', gap: '30px' }}>
-                        <div style={{ borderLeft: '6px solid var(--primary)', paddingLeft: '30px' }}>
-                            <span className="font-heading" style={{ color: '#666', letterSpacing: '0.2em' }}>E-GROCERY</span>
-                            <h1 className="font-heading" style={{ fontSize: '4rem', marginTop: '10px' }}>FRESH PANTRY</h1>
+                        <div style={{ borderLeft: '6px solid var(--primary)', paddingLeft: '20px' }}>
+                            <span className="font-heading" style={{ color: '#666', letterSpacing: '0.2em', fontSize: '0.8rem' }}>E-GROCERY</span>
+                            <h1 className="font-heading" style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginTop: '10px' }}>FRESH PANTRY</h1>
                         </div>
 
-                        <div style={{ background: 'rgba(224, 43, 32, 0.1)', border: '1px solid var(--primary)', padding: '20px 40px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '20px' }}>
-                            <Clock className="text-primary" size={24} />
+                        <div style={{ background: 'rgba(224, 43, 32, 0.1)', border: '1px solid var(--primary)', padding: '15px 30px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px', width: '100%', maxWidth: '400px' }}>
+                            <Clock className="text-primary" size={20} />
                             <div>
-                                <p style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--primary)' }}>Pickup Estimate</p>
-                                <p style={{ fontSize: '1.2rem', fontWeight: 700 }}>Ready in 30 - 45 mins</p>
+                                <p style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', color: 'var(--primary)' }}>Pickup Estimate</p>
+                                <p style={{ fontSize: '1.1rem', fontWeight: 700 }}>Ready in 30 - 45 mins</p>
                             </div>
                         </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: '20px' }}>
                         {productsData.map(product => (
                             <ProductCard key={product.id} product={product} />
                         ))}
